@@ -1,0 +1,48 @@
+#include<stdio.h>
+int x;  				//global
+
+int callpri(int n)
+{
+	x++;
+	
+	if(n==1)
+	return 0;
+	
+	else if(n%2!=0)
+	{
+		n=3*n+1;
+		return callpri(n);
+	}
+	else
+	{
+		n=n/2;
+	return callpri(n);
+	}
+}
+
+int main()
+{
+	int c,a,b;
+	int longest,h,k;
+	while(scanf("%d %d",&a,&b)==2){
+		longest=0;
+		h=a,k=b;				// for printing when b<a
+		
+		if(b<a)
+		{
+			c=a;
+			a=b;
+			b=c;
+		}
+		for(;a<=b;a++){
+			x=0;
+			callpri(a);
+			
+			if(x>longest)
+				longest=x;
+		}
+		printf("%d %d %d\n",h,k,longest);
+	}
+	return 0;
+}
+// there is another problem related this . go uvatoolkit & give 100 num in search
