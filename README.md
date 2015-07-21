@@ -1,4 +1,4 @@
 Open-gl
 =======
 
-this contain the basic code of open gl
+The basic code of Open GL
